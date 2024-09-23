@@ -59,11 +59,11 @@ void loop() {
     if (distance <= 15) {
       statusMessage = "Objeto muito perto";
       digitalWrite(relayPin, LOW); // Ligar o relé
-      client.publish("relay/status", "Relé ligado, objeto perto");
+      client.publish("relay/status", "Relé ligado");
     } else if (distance >= 20) {
       statusMessage = "Objeto longe";
       digitalWrite(relayPin, HIGH); // Desligar o relé
-      client.publish("relay/status", "Relé desligado, objeto longe");
+      client.publish("relay/status", "Relé desligado");
     } else {
      statusMessage = "Distância média: " + distanceStr;
     }
